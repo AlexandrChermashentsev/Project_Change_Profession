@@ -24,9 +24,32 @@ string[] InitialArray(int quantity)
     return array;
 }
 
+string[] FindThreeElementsArray(string[] startingArray)
+{
+    int finalArrLength = 0;
+    for (int i = 0; i < startingArray.Length; i++)
+    {
+        if (startingArray[i].Length <= 3) 
+        finalArrLength++;
+    }
+    string[] finalArr = new string[finalArrLength];
+    int j = 0;
+    for (int i = 0; i < startingArray.Length; i++)
+    {
+        if(startingArray[i].Length <= 3) 
+        {
+            finalArr[j] = startingArray[i];
+            j++;
+        }
+    }
+    return finalArr;
+}
 
 Console.WriteLine("Enter the integer number - length of the array");
 int userLength = Convert.ToInt32(Console.ReadLine());
 
 string[] userArray = InitialArray(userLength);
 PrintArray(userArray);
+
+string[] finalArr = FindThreeElementsArray(userArray);
+PrintArray(finalArr);
