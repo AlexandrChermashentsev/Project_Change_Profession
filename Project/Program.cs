@@ -14,6 +14,17 @@
     Console.WriteLine();
 }
 
+string[] InitialArray(int quantity)
+{
+    string[] array = new string[quantity];
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Console.ReadLine();
+    }
+    return array;
+}
+
+
 Console.WriteLine("Enter the integer number - length of the array");
 int userLength = Convert.ToInt32(Console.ReadLine());
 
